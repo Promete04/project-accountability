@@ -1,0 +1,11 @@
+{
+    "user_username": "okuyasu_nijimura",
+    "user_password": "the_hand",
+    "user_signing_key_path": "../keys/user2-rsa-private.key",
+    "user_verification_key_path": "../keys/user2-rsa-public.key",
+    "user_encryption_private_key_path": "../keys/user2-rsa-encryption-private.key",
+    "user_encryption_public_key_path": "../keys/user2-rsa-encryption-public.key",
+    "user_prg_seed_path": "../keys/user2-prg-seed.txt",
+    "user_certificate_path": "../keys/user2-cert-signature.txt",
+    "server_verification_key_path": "../keys/serv-rsa-public.key"
+}

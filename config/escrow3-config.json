@@ -1,0 +1,9 @@
+{
+    "escrow_id": "4",
+    "escrow_secret_key_path": "../keys/escrow3",
+    "escrow_public_key_path": "../keys/escrow3",
+    "escrow_public_key_paths": "../keys",
+    "server_verification_key_path": "../keys/serv-rsa-public.key",
+    "server_ip": "127.0.0.1",
+    "server_port": 8080
+}

@@ -1,0 +1,55 @@
+\documentclass[sigconf]{acmart}
+
+% Removing ACM reference format and copyright for a university project proposal
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\begin{document}
+
+\title{Project Accountability}
+\subtitle{Project Proposal - Group E}
+
+\author{Guillermo Ramos Santos}
+
+\author{Itamar Fink}
+
+\begin{abstract}
+	Project Accountability extends our earlier secure messaging project with sender-key group chat, message non-repudiation, and a threshold key-escrow scheme that permits lawful, majority-gated access to message content.
+\end{abstract}
+
+\maketitle
+
+\section{Outline of the Project}
+Project Accountability extends our prior secure messaging protocol project
+with group chat and two further guarantees needed for high-accountability settings,
+such as political or corporate boards, where messages may be subject to lawful interception:
+
+\begin{itemize}
+	\item \textbf{Group chat:} messages are encrypted with the sender-key approach, so the server learns nothing about group membership and only intended recipients can read messages.
+	\item \textbf{Non-repudiation:} every message is digitally signed by its sender,
+	      so authorship cannot later be denied.
+	\item \textbf{Auditable (threshold) privacy:} every message is additionally encrypted under a Council Public Key, whose private key is split among an oversight council via a $(t,n)$ Shamir threshold scheme. If law enforcement requests access to a conversation, the council can decrypt it only if at least $t$ of the $n$ members combine their shares, mathematically enforcing a majority vote before privacy is lifted.
+\end{itemize}
+
+\section{Stretch Goals}
+Time permitting within the three-week window, we plan to:
+\begin{itemize}
+	\item Implement a "reunion" mode that forces all the members of the group to be
+	      connected to be able to decrypt the messages through partial decryption scheme.
+	\item Build a Terminal User Interface (TUI) for better usability than a plain CLI.
+\end{itemize}
+
+\section{Libraries Required}
+\begin{itemize}
+	\item \textbf{FTXUI} for the terminal interface.
+	\item \textbf{CryptoPP} for symmetric encryption (sender-key), digital signatures, and Shamir secret sharing for the $(t,n)$ threshold scheme.
+\end{itemize}
+
+\section{Open Questions}
+\begin{itemize}
+	\item How can a message be efficiently packaged for both the active group members and the static Council Public Key without doubling ciphertext size?
+	\item How should council shares be revoked or regenerated when a member is replaced or loses their key?
+\end{itemize}
+
+\end{document}
